@@ -1,6 +1,6 @@
 # \ var
 MODULE  = $(notdir $(CURDIR))
-OS      = $(shell uname -s)
+OS      = $(shell uname -o)
 NOW     = $(shell date +%d%m%y)
 REL     = $(shell git rev-parse --short=4 HEAD)
 BRANCH  = $(shell git rev-parse --abbrev-ref HEAD)
@@ -14,20 +14,19 @@ DOC     = $(CWD)/doc
 LIB     = $(CWD)/lib
 SRC     = $(CWD)/src
 TMP     = $(CWD)/tmp
-PYPATH  = $(HOME)/.local/bin
 # / dir
 
 # \ tool
 CURL    = curl -L -o
 PY      = $(shell which python3)
 PIP     = $(shell which pip3)
-PEP     = $(PYPATH)/autopep8
-PYT     = $(PYPATH)/pytest
+PEP     = $(shell which autopep8)
+PYT     = $(shell which pytest)
 # / tool
 
 # \ src
 Y   += $(MODULE).metaL.py metaL.py
-Y   += $(MODULE).py
+Y   += $(MODULE).py test_$(MODULE).py
 P   += config.py
 S   += $(Y)
 # / src
@@ -78,6 +77,11 @@ ifneq (,$(shell which apt))
 	sudo apt update
 	sudo apt install -u `cat apt.txt apt.dev`
 endif
+
+.PHONY: Msys_install Msys_update
+Msys_install:
+	pacman -S git make python3 python3-pip
+Msys_update:
 # / install
 
 # \ merge

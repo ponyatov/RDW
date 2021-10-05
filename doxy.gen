@@ -1,9 +1,9 @@
 PROJECT_NAME           = "RDW"
-PROJECT_BRIEF          = "RDW"
+PROJECT_BRIEF          = "Return / Data / Words virtual machine (FORTH)"
 PROJECT_LOGO           = doc/logo.png
 OUTPUT_DIRECTORY       =
 WARN_IF_UNDOCUMENTED   = NO
-INPUT                  = README.md src metaL.py RDW.metaL.py doc
+INPUT                  = README.md src metaL.py RDW.metaL.py doc RDW.py test_RDW.py
 RECURSIVE              = YES
 USE_MDFILE_AS_MAINPAGE = README.md
 HTML_OUTPUT            = docs

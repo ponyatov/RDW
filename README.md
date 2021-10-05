@@ -1,5 +1,5 @@
 #  ![logo](doc/logo.png) `RDW`
-## RDW
+## Return / Data / Words virtual machine (FORTH)
 
 (c) Dmitry Ponyatov <<dponyatov@gmail.com>> 2020 All rights reserved
 
